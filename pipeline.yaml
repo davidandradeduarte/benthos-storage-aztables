@@ -1,0 +1,15 @@
+input:
+  label: ''
+  generate:
+    mapping: 'root = {"test": "test", "pkey": uuid_v4(), "rkey": uuid_v4()}'
+    interval: '@every 1s'
+    count: 0
+
+output:
+  table_storage:
+    storage_connection_string: 'STORAGE_CONNECTION_STRING'
+    table_name: 'TestTable'
+    partition_key: '${!json("pkey")}'
+    row_key: '${!json("rkey")}'
+    insert_type: 'INSERT_REPLACE'
+    max_in_flight: 5
