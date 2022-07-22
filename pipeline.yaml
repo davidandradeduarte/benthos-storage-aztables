@@ -6,7 +6,7 @@ input:
     count: 0
 
 output:
-  table_storage:
+  azure_table_storage:
     storage_connection_string: 'STORAGE_CONNECTION_STRING'
     table_name: 'TestTable'
     partition_key: '${!json("pkey")}'
