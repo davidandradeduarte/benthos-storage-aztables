@@ -3,7 +3,7 @@ input:
   generate:
     mapping: 'root = {"test": "test", "pkey": uuid_v4(), "rkey": uuid_v4()}'
     interval: '@every 1s'
-    count: 0
+    count: 5
 
 output:
   azure_table_storage:
